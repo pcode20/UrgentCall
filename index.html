@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrgentCall - Emergency Helpline Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-phone-volume"></i>
+                <span>UrgentCall</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link login-btn" onclick="openLoginModal()">Login</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Emergency Help When You Need It Most</h1>
+                <p class="hero-subtitle">Instant access to emergency services, women safety helplines, cyber crime support, and comprehensive emergency assistance across India</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('services')">
+                        <i class="fas fa-ambulance"></i>
+                        Get Help Now
+                    </button>
+                    <button class="btn btn-emergency" onclick="openEmergencyModal()">
+                        <i class="fas fa-phone-alt"></i>
+                        Emergency Call
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Emergency Numbers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Available</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free Service</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="emergency-pulse">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Quick Access -->
+    <section class="quick-access">
+        <div class="container">
+            <h2 class="section-title">Quick Emergency Access</h2>
+            <div class="quick-cards">
+                <div class="quick-card emergency-card">
+                    <div class="card-bg"></div>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>National Emergency</h3>
+                    <p class="emergency-number">112</p>
+                    <p class="card-desc">All-in-one emergency number</p>
+                    <button class="btn btn-danger" onclick="callNumber('112')">Call Now</button>
+                </div>
+                <div class="quick-card police-card">
+                    <div class="card-bg"></div>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Police</h3>
+                    <p class="emergency-number">100</p>
+                    <p class="card-desc">Law enforcement assistance</p>
+                    <button class="btn btn-primary" onclick="callNumber('100')">Call Now</button>
+                </div>
+                <div class="quick-card medical-card">
+                    <div class="card-bg"></div>
+                    <i class="fas fa-ambulance"></i>
+                    <h3>Medical Emergency</h3>
+                    <p class="emergency-number">102</p>
+                    <p class="card-desc">Ambulance & medical help</p>
+                    <button class="btn btn-success" onclick="callNumber('102')">Call Now</button>
+                </div>
+                <div class="quick-card fire-card">
+                    <div class="card-bg"></div>
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h3>Fire Department</h3>
+                    <p class="emergency-number">101</p>
+                    <p class="card-desc">Fire emergency services</p>
+                    <button class="btn btn-warning" onclick="callNumber('101')">Call Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Comprehensive Emergency Services</h2>
+            <div class="services-grid">
+                <!-- Women Safety Card -->
+                <div class="service-card women-safety" data-category="women">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <h3>Women Safety</h3>
+                        <p>24/7 support for women in distress with immediate assistance</p>
+                    </div>
+                    <div class="card-numbers">
+                        <div class="number-item">
+                            <span class="label">Women Helpline:</span>
+                            <span class="number">1091</span>
+                            <button class="call-btn" onclick="callNumber('1091')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Women in Distress:</span>
+                            <span class="number">181</span>
+                            <button class="call-btn" onclick="callNumber('181')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Domestic Violence:</span>
+                            <span class="number">1098</span>
+                            <button class="call-btn" onclick="callNumber('1098')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Women Safety App:</span>
+                            <span class="number">Himmat Plus</span>
+                            <button class="call-btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.delhi.police.himmatplus', '_blank')"><i class="fas fa-external-link-alt"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="showDetails('women')">View Details</button>
+                </div>
+
+                <!-- Cyber Crime Card -->
+                <div class="service-card cyber-crime" data-category="cyber">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Cyber Crime</h3>
+                        <p>Report cyber crimes, online fraud, and digital harassment</p>
+                    </div>
+                    <div class="card-numbers">
+                        <div class="number-item">
+                            <span class="label">Cyber Crime Helpline:</span>
+                            <span class="number">1930</span>
+                            <button class="call-btn" onclick="callNumber('1930')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Banking Fraud:</span>
+                            <span class="number">155260</span>
+                            <button class="call-btn" onclick="callNumber('155260')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Digital Fraud:</span>
+                            <span class="number">14416</span>
+                            <button class="call-btn" onclick="callNumber('14416')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Online Portal:</span>
+                            <span class="number">cybercrime.gov.in</span>
+                            <button class="call-btn" onclick="window.open('https://cybercrime.gov.in', '_blank')"><i class="fas fa-external-link-alt"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="showDetails('cyber')">View Details</button>
+                </div>
+
+                <!-- Medical Emergency Card -->
+                <div class="service-card medical-emergency" data-category="medical">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Medical Emergency</h3>
+                        <p>Immediate medical assistance and ambulance services</p>
+                    </div>
+                    <div class="card-numbers">
+                        <div class="number-item">
+                            <span class="label">Ambulance:</span>
+                            <span class="number">102</span>
+                            <button class="call-btn" onclick="callNumber('102')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Medical Emergency:</span>
+                            <span class="number">108</span>
+                            <button class="call-btn" onclick="callNumber('108')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Blood Bank:</span>
+                            <span class="number">104</span>
+                            <button class="call-btn" onclick="callNumber('104')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Poison Control:</span>
+                            <span class="number">1066</span>
+                            <button class="call-btn" onclick="callNumber('1066')"><i class="fas fa-phone"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="showDetails('medical')">View Details</button>
+                </div>
+
+                <!-- Child Helpline Card -->
+                <div class="service-card child-helpline" data-category="child">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Child Protection</h3>
+                        <p>Protection and support for children in need</p>
+                    </div>
+                    <div class="card-numbers">
+                        <div class="number-item">
+                            <span class="label">Child Helpline:</span>
+                            <span class="number">1098</span>
+                            <button class="call-btn" onclick="callNumber('1098')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Missing Child:</span>
+                            <span class="number">1094</span>
+                            <button class="call-btn" onclick="callNumber('1094')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Child Abuse:</span>
+                            <span class="number">1098</span>
+                            <button class="call-btn" onclick="callNumber('1098')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Runaway Children:</span>
+                            <span class="number">1098</span>
+                            <button class="call-btn" onclick="callNumber('1098')"><i class="fas fa-phone"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="showDetails('child')">View Details</button>
+                </div>
+
+                <!-- Mental Health Card -->
+                <div class="service-card mental-health" data-category="mental">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Mental Health</h3>
+                        <p>Mental health support and suicide prevention helpline</p>
+                    </div>
+                    <div class="card-numbers">
+                        <div class="number-item">
+                            <span class="label">KIRAN Helpline:</span>
+                            <span class="number">1800-599-0019</span>
+                            <button class="call-btn" onclick="callNumber('18005990019')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Suicide Prevention:</span>
+                            <span class="number">9152987821</span>
+                            <button class="call-btn" onclick="callNumber('9152987821')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">NIMHANS:</span>
+                            <span class="number">080-46110007</span>
+                            <button class="call-btn" onclick="callNumber('08046110007')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Vandrevala Foundation:</span>
+                            <span class="number">9999666555</span>
+                            <button class="call-btn" onclick="callNumber('9999666555')"><i class="fas fa-phone"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="showDetails('mental')">View Details</button>
+                </div>
+
+                <!-- Senior Citizens Card -->
+                <div class="service-card senior-citizens" data-category="senior">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Senior Citizens</h3>
+                        <p>Dedicated support for elderly citizens and their needs</p>
+                    </div>
+                    <div class="card-numbers">
+                        <div class="number-item">
+                            <span class="label">Elder Helpline:</span>
+                            <span class="number">14567</span>
+                            <button class="call-btn" onclick="callNumber('14567')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Senior Citizen Helpline:</span>
+                            <span class="number">1291</span>
+                            <button class="call-btn" onclick="callNumber('1291')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Elder Abuse:</span>
+                            <span class="number">1090</span>
+                            <button class="call-btn" onclick="callNumber('1090')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Health Helpline:</span>
+                            <span class="number">104</span>
+                            <button class="call-btn" onclick="callNumber('104')"><i class="fas fa-phone"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="showDetails('senior')">View Details</button>
+                </div>
+
+                <!-- Disaster Management Card -->
+                <div class="service-card disaster-management" data-category="disaster">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Disaster Management</h3>
+                        <p>Natural disaster response and emergency management</p>
+                    </div>
+                    <div class="card-numbers">
+                        <div class="number-item">
+                            <span class="label">Disaster Management:</span>
+                            <span class="number">108</span>
+                            <button class="call-btn" onclick="callNumber('108')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">NDRF Helpline:</span>
+                            <span class="number">011-26701700</span>
+                            <button class="call-btn" onclick="callNumber('01126701700')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Earthquake Helpline:</span>
+                            <span class="number">011-24363260</span>
+                            <button class="call-btn" onclick="callNumber('01124363260')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Flood Control:</span>
+                            <span class="number">1070</span>
+                            <button class="call-btn" onclick="callNumber('1070')"><i class="fas fa-phone"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="showDetails('disaster')">View Details</button>
+                </div>
+
+                <!-- Railway Emergency Card -->
+                <div class="service-card railway-emergency" data-category="railway">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-train"></i>
+                        </div>
+                        <h3>Railway Emergency</h3>
+                        <p>Railway safety, security, and emergency assistance</p>
+                    </div>
+                    <div class="card-numbers">
+                        <div class="number-item">
+                            <span class="label">Railway Helpline:</span>
+                            <span class="number">139</span>
+                            <button class="call-btn" onclick="callNumber('139')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Railway Security:</span>
+                            <span class="number">182</span>
+                            <button class="call-btn" onclick="callNumber('182')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Medical Emergency:</span>
+                            <span class="number">138</span>
+                            <button class="call-btn" onclick="callNumber('138')"><i class="fas fa-phone"></i></button>
+                        </div>
+                        <div class="number-item">
+                            <span class="label">Accident Helpline:</span>
+                            <span class="number">1072</span>
+                            <button class="call-btn" onclick="callNumber('1072')"><i class="fas fa-phone"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" onclick="showDetails('railway')">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-overlay"></div>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About UrgentCall</h2>
+                    <p>UrgentCall is India's most comprehensive emergency helpline portal, designed to provide instant access to life-saving services. Our mission is to ensure that help is always within reach for every citizen, especially women, children, and vulnerable populations.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>24/7 Availability</h4>
+                                <p>Round-the-clock emergency assistance</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Secure & Confidential</h4>
+                                <p>Your privacy and safety are our priority</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>Mobile Responsive</h4>
+                                <p>Access from any device, anywhere</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location Services</h4>
+                                <p>GPS-enabled emergency response</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Helping Hands</h3>
+                        <p>Together we can make India safer for everyone</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Emergency Response Center<br>New Delhi, India 110001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Emergency Hotline</h4>
+                            <p>112 (National Emergency)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>help@urgentcall.in</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Availability</h4>
+                            <p>24/7 Emergency Services</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Emergency Type</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="complaint">Complaint</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-phone-volume"></i>
+                        <span>UrgentCall</span>
+                    </div>
+                    <p>Your trusted emergency helpline platform. Providing instant access to life-saving services across India. Available 24/7 for emergency assistance.</p>
+                    <div class="emergency-highlight">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>In Emergency: Call 112</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Emergency Numbers</h4>
+                    <ul class="emergency-list">
+                        <li><a href="tel:112">National Emergency: 112</a></li>
+                        <li><a href="tel:100">Police: 100</a></li>
+                        <li><a href="tel:101">Fire: 101</a></li>
+                        <li><a href="tel:102">Medical: 102</a></li>
+                        <li><a href="tel:1091">Women Helpline: 1091</a></li>
+                        <li><a href="tel:1098">Child Helpline: 1098</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Emergency Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="app-download">
+                        <h5>Download Our App</h5>
+                        <div class="app-buttons">
+                            <a href="#" class="app-btn">
+                                <i class="fab fa-google-play"></i>
+                                <span>Google Play</span>
+                            </a>
+                            <a href="#" class="app-btn">
+                                <i class="fab fa-apple"></i>
+                                <span>App Store</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 UrgentCall. All rights reserved. | Designed for public safety and emergency response</p>
+                <div class="footer-badges">
+                    <span class="badge">Government Approved</span>
+                    <span class="badge">24/7 Service</span>
+                    <span class="badge">Secure Platform</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-phone-volume"></i>
+                <h2>Login to UrgentCall</h2>
+                <p>Access your emergency dashboard</p>
+            </div>
+            <form class="login-form">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </button>
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                <button type="button" class="btn btn-google">
+                    <i class="fab fa-google"></i>
+                    Continue with Google
+                </button>
+                <p class="form-footer">Don't have an account? <a href="#" onclick="openSignupModal()">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Emergency Modal -->
+    <div id="emergencyModal" class="modal">
+        <div class="modal-content emergency-modal">
+            <span class="close" onclick="closeEmergencyModal()">&times;</span>
+            <div class="emergency-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Emergency Contact</h2>
+                <p>Choose your emergency service</p>
+            </div>
+            <div class="emergency-options">
+                <button class="emergency-btn national" onclick="callNumber('112')">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>112</h3>
+                        <p>National Emergency</p>
+                    </div>
+                </button>
+                <button class="emergency-btn police" onclick="callNumber('100')">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h3>100</h3>
+                        <p>Police</p>
+                    </div>
+                </button>
+                <button class="emergency-btn medical" onclick="callNumber('102')">
+                    <i class="fas fa-ambulance"></i>
+                    <div>
+                        <h3>102</h3>
+                        <p>Medical Emergency</p>
+                    </div>
+                </button>
+                <button class="emergency-btn fire" onclick="callNumber('101')">
+                    <i class="fas fa-fire"></i>
+                    <div>
+                        <h3>101</h3>
+                        <p>Fire Department</p>
+                    </div>
+                </button>
+                <button class="emergency-btn women" onclick="callNumber('1091')">
+                    <i class="fas fa-female"></i>
+                    <div>
+                        <h3>1091</h3>
+                        <p>Women Helpline</p>
+                    </div>
+                </button>
+                <button class="emergency-btn child" onclick="callNumber('1098')">
+                    <i class="fas fa-child"></i>
+                    <div>
+                        <h3>1098</h3>
+                        <p>Child Helpline</p>
+                    </div>
+                </button>
+            </div>
+            <div class="emergency-footer">
+                <button class="btn btn-secondary" onclick="shareLocation()">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Share Location
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
